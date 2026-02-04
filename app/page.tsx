@@ -78,6 +78,7 @@ export default function Home() {
           width: '100%',
           padding: '80px 120px 60px',
           boxSizing: 'border-box',
+          backgroundColor: '#fafafa',
         }}
       >
         <div style={{ animation: 'fadeInUp 0.8s ease-out' }}>
@@ -102,16 +103,17 @@ export default function Home() {
         {/* Profile Image Placeholder */}
         <div
           style={{
-            width: '100%',
-            aspectRatio: '1',
+            width: '200px',
+            height: '200px',
             backgroundColor: 'rgba(0,0,0,0.02)',
-            borderRadius: '12px',
+            borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             border: '1px solid rgba(0,0,0,0.08)',
             overflow: 'hidden',
             animation: 'fadeInUp 0.8s ease-out 0.1s backwards',
+            marginLeft: 'auto',
           }}
         >
           <img
@@ -143,26 +145,35 @@ export default function Home() {
           width: '100%',
           padding: '60px 120px',
           borderTop: '2px solid rgba(0,0,0,0.08)',
-          backgroundColor: '#fafafa',
+          backgroundColor: '#ffffff',
           boxSizing: 'border-box',
         }}
       >
-        <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: 32 }}>About Me</h2>
-        <div style={{ display: 'grid', gap: 20, fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.85 }}>
-          <p>
-            I'm a third-year Computer Engineering student at McGill University, paired with three distinct passions: 
-            <strong> software engineering, competitive swimming, and algorithmic trading.</strong>
-          </p>
-          <p>
-            At McGill, I'm an Athletic Scholarship recipient and varsity swimmer competing at an elite level. 
-            I've represented Canada at the Olympic Trials (2024 Bronze Medalist), set provincial records, and earned 
-            medals at national competitions. Outside the pool, I'm equally dedicated to software engineering, having 
-            built production systems, data analytics platforms, and trading algorithms.
-          </p>
-          <p>
-          My unique background combining elite athletics, technical education, and practical development 
-            experience drives my approach to problem-solving with discipline, precision, and resilience.
-          </p>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'flex-start' }}>
+          <div>
+            <div style={{ width: '100%', height: '200px', borderRadius: 12, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
+              <img src="/about-photo.jpg" alt="About" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} onError={(e)=>{e.currentTarget.style.display='none'; if(e.currentTarget.parentElement) e.currentTarget.parentElement.textContent='📸 Add /about-photo.jpg to /public'; e.currentTarget.parentElement.style.fontSize='0.95rem'; e.currentTarget.parentElement.style.opacity='0.5'; e.currentTarget.parentElement.style.display='flex'; e.currentTarget.parentElement.style.alignItems='center'; e.currentTarget.parentElement.style.justifyContent='center'; e.currentTarget.parentElement.style.background='rgba(0,0,0,0.02)'}} />
+            </div>
+          </div>
+          <div>
+            <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: 32 }}>About Me</h2>
+            <div style={{ display: 'grid', gap: 20, fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.85 }}>
+              <p>
+                I'm a third-year Computer Engineering student at McGill University, paired with three distinct passions: 
+                <strong> software engineering, competitive swimming, and trading.</strong>
+              </p>
+              <p>
+                At McGill, I'm an Athletic Scholarship recipient and varsity swimmer competing at an elite level. 
+                I've represented Canada at the Olympic Trials (2024 Bronze Medalist), set provincial records, and earned 
+                medals at national competitions. Outside the pool, I'm equally dedicated to software engineering, having 
+                built production systems, data analytics platforms, and trading algorithms.
+              </p>
+              <p>
+              My unique background combining elite athletics, technical education, and practical development 
+                experience drives my approach to problem-solving with discipline, precision, and resilience.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -172,7 +183,7 @@ export default function Home() {
           width: '100%',
           padding: '60px 120px',
           borderTop: '2px solid rgba(0,0,0,0.08)',
-          backgroundColor: '#ffffff',
+          backgroundColor: '#f5f5f5',
           boxSizing: 'border-box',
         }}
       >
@@ -207,7 +218,7 @@ export default function Home() {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              {/* Company Logo - Image or Emoji */}
+              {/* Company Logo Placeholder */}
               <div
                 style={{
                   width: 80,
@@ -217,19 +228,12 @@ export default function Home() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  fontSize: '2.5rem',
-                  overflow: 'hidden',
+                  fontSize: '0.85rem',
+                  color: 'rgba(0,0,0,0.4)',
+                  border: '1px dashed rgba(0,0,0,0.1)',
                 }}
               >
-                {exp.logo.startsWith('/') ? (
-                  <img
-                    src={exp.logo}
-                    alt={exp.company}
-                    style={{ width: '100%', height: '100%', objectFit: 'contain', padding: '8px' }}
-                  />
-                ) : (
-                  exp.logo
-                )}
+                Logo
               </div>
               <p style={{ margin: 0, fontWeight: 700, fontSize: '0.95rem' }}>{exp.title}</p>
               <p style={{ margin: '6px 0 0 0', opacity: 0.7, fontSize: '0.9rem' }}>{exp.company}</p>
@@ -246,18 +250,27 @@ export default function Home() {
           width: '100%',
           padding: '60px 120px',
           borderTop: '2px solid rgba(0,0,0,0.08)',
-          backgroundColor: '#fafafa',
+          backgroundColor: '#ffffff',
           boxSizing: 'border-box',
         }}
       >
-        <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: 24 }}>More About Me!</h2>
-        <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: 12 }}>Education</h3>
-        <p style={{ fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.85, marginBottom: 12 }}>
-          Currently pursuing a Bachelor of Science in Mathematics and Computer Science at McGill University, expected to graduate in spring 2026.
-        </p>
-        <p style={{ fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.85 }}>
-          My coursework spans Machine Learning, Quantitative Risk Management, Probability, Statistics, Calculus, Abstract Algebra, Data Structures, Algorithms and more.
-        </p>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 40, alignItems: 'flex-start' }}>
+          <div>
+            <div style={{ width: '280px', height: '360px', borderRadius: 12, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
+              <img src="/education-photo.jpg" alt="Education" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} onError={(e)=>{e.currentTarget.style.display='none'; if(e.currentTarget.parentElement) e.currentTarget.parentElement.innerHTML='<div style="width:100%;height:100%;display:flex;alignItems:center;justifyContent:center;background:rgba(0,0,0,0.02);border:1px dashed rgba(0,0,0,0.1);fontSize:0.9rem;color:rgba(0,0,0,0.4)">📸 Add /education-photo.jpg</div>'}} />
+            </div>
+          </div>
+          <div>
+            <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: 24 }}>More About Me!</h2>
+            <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: 12 }}>Education</h3>
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.85, marginBottom: 12 }}>
+              Currently pursuing a Bachelor of Science in Mathematics and Computer Science at McGill University, expected to graduate in spring 2026.
+            </p>
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.85 }}>
+              My coursework spans Machine Learning, Quantitative Risk Management, Probability, Statistics, Calculus, Abstract Algebra, Data Structures, Algorithms and more.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* Technical Skills */}
@@ -266,7 +279,7 @@ export default function Home() {
           width: '100%',
           padding: '60px 120px',
           borderTop: '2px solid rgba(0,0,0,0.08)',
-          backgroundColor: '#ffffff',
+          backgroundColor: '#f5f5f5',
           boxSizing: 'border-box',
         }}
       >
@@ -282,16 +295,16 @@ export default function Home() {
         </p>
 
         {/* Logos row - place image files in /public/logos/ */}
-        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginTop: 12, alignItems: 'center' }}>
-          <img src="/logos/python.svg" alt="Python" style={{ height: 48 }} onError={(e)=>{e.currentTarget.style.display='none'}} />
-          <img src="/logos/java.svg" alt="Java" style={{ height: 48 }} onError={(e)=>{e.currentTarget.style.display='none'}} />
-          <img src="/logos/react.svg" alt="React" style={{ height: 48 }} onError={(e)=>{e.currentTarget.style.display='none'}} />
-          <img src="/logos/js.svg" alt="JavaScript" style={{ height: 48 }} onError={(e)=>{e.currentTarget.style.display='none'}} />
-          <img src="/logos/html.svg" alt="HTML" style={{ height: 48 }} onError={(e)=>{e.currentTarget.style.display='none'}} />
-          <img src="/logos/css.svg" alt="CSS" style={{ height: 48 }} onError={(e)=>{e.currentTarget.style.display='none'}} />
-          <img src="/logos/pytorch.svg" alt="PyTorch" style={{ height: 48 }} onError={(e)=>{e.currentTarget.style.display='none'}} />
-          <img src="/logos/r.svg" alt="R" style={{ height: 48 }} onError={(e)=>{e.currentTarget.style.display='none'}} />
-          <img src="/logos/powerbi.svg" alt="Power BI" style={{ height: 48 }} onError={(e)=>{e.currentTarget.style.display='none'}} />
+        <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap', marginTop: 24, alignItems: 'center' }}>
+          <div style={{ width: 48, height: 48, borderRadius: '8px', backgroundColor: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: 'rgba(0,0,0,0.4)', border: '1px dashed rgba(0,0,0,0.1)' }}>Python</div>
+          <div style={{ width: 48, height: 48, borderRadius: '8px', backgroundColor: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: 'rgba(0,0,0,0.4)', border: '1px dashed rgba(0,0,0,0.1)' }}>Java</div>
+          <div style={{ width: 48, height: 48, borderRadius: '8px', backgroundColor: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: 'rgba(0,0,0,0.4)', border: '1px dashed rgba(0,0,0,0.1)' }}>React</div>
+          <div style={{ width: 48, height: 48, borderRadius: '8px', backgroundColor: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: 'rgba(0,0,0,0.4)', border: '1px dashed rgba(0,0,0,0.1)' }}>JS</div>
+          <div style={{ width: 48, height: 48, borderRadius: '8px', backgroundColor: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: 'rgba(0,0,0,0.4)', border: '1px dashed rgba(0,0,0,0.1)' }}>HTML</div>
+          <div style={{ width: 48, height: 48, borderRadius: '8px', backgroundColor: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: 'rgba(0,0,0,0.4)', border: '1px dashed rgba(0,0,0,0.1)' }}>CSS</div>
+          <div style={{ width: 48, height: 48, borderRadius: '8px', backgroundColor: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: 'rgba(0,0,0,0.4)', border: '1px dashed rgba(0,0,0,0.1)' }}>PyTorch</div>
+          <div style={{ width: 48, height: 48, borderRadius: '8px', backgroundColor: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: 'rgba(0,0,0,0.4)', border: '1px dashed rgba(0,0,0,0.1)' }}>R</div>
+          <div style={{ width: 48, height: 48, borderRadius: '8px', backgroundColor: 'rgba(0,0,0,0.05)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.75rem', color: 'rgba(0,0,0,0.4)', border: '1px dashed rgba(0,0,0,0.1)' }}>Power BI</div>
         </div>
       </section>
 
@@ -301,14 +314,14 @@ export default function Home() {
           width: '100%',
           padding: '40px 120px',
           borderTop: '2px solid rgba(0,0,0,0.08)',
-          backgroundColor: '#fafafa',
+          backgroundColor: '#ffffff',
           boxSizing: 'border-box',
         }}
       >
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, alignItems: 'center' }}>
           <div>
-            <div style={{ width: '100%', borderRadius: 12, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
-              <img src="/extra-photo.jpg" alt="Extracurricular" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} onError={(e)=>{e.currentTarget.style.display='none'}} />
+            <div style={{ width: '280px', height: '360px', borderRadius: 12, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.06)', border: '1px dashed rgba(0,0,0,0.1)' }}>
+              <img src="/extra-photo.jpg" alt="Extracurricular" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} onError={(e)=>{e.currentTarget.style.display='none'; if(e.currentTarget.parentElement) e.currentTarget.parentElement.innerHTML='<div style="width:100%;height:100%;display:flex;alignItems:center;justifyContent:center;background:rgba(0,0,0,0.02);fontSize:0.9rem;color:rgba(0,0,0,0.4)">📸 Add /extra-photo.jpg</div>'}} />
             </div>
           </div>
 
@@ -333,15 +346,16 @@ export default function Home() {
           padding: '80px 120px 60px',
           textAlign: 'center',
           borderTop: '2px solid rgba(0,0,0,0.08)',
+          backgroundColor: '#f5f5f5',
           boxSizing: 'border-box',
         }}
       >
-        <div style={{ maxWidth: 900, margin: '0 auto', borderRadius: 12, border: '1px solid rgba(0,0,0,0.08)', padding: 28, background: 'white' }}>
+        <div style={{ maxWidth: 900, margin: '0 auto', borderRadius: 12, border: '1px solid rgba(0,0,0,0.08)', padding: 28, background: '#f0f0f0' }}>
           <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: 12 }}>Get In Touch</h2>
           <p style={{ fontSize: '1.05rem', opacity: 0.85, marginBottom: 24 }}>I'd love to connect! Reach out anytime.</p>
           <div style={{ display: 'grid', gap: 12, fontSize: '1.05rem', marginBottom: 20 }}>
-            <a href="mailto:tristan.govier@mail.mcgill.ca" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: 600 }}>
-              📧 tristan.govier@mail.mcgill.ca
+            <a href="mailto:trisgovier@gmail.com" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: 600 }}>
+              📧 trisgovier@gmail.com
             </a>
             <a href="tel:+16048288852" style={{ textDecoration: 'none', color: '#1a1a1a', fontWeight: 600 }}>
               📱 604-828-8852
