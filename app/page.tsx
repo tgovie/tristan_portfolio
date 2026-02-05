@@ -14,6 +14,7 @@ export default function Home() {
       title: 'Technical Data Analyst Intern',
       period: 'May – Aug 2025',
       location: 'Singapore',
+      website: '',
       description: 'Built Power BI dashboards for finance sector analysis, provided Level 2 technical support, and collaborated on enterprise system deployments.',
       highlights: [
         'Developed interactive Power BI dashboards for 50+ financial analysts',
@@ -29,6 +30,7 @@ export default function Home() {
       title: 'Technical Data Analyst Intern',
       period: 'Nov 2024 – May 2025',
       location: 'Singapore',
+      website: '',
       description: 'Implemented SAP procurement data integration, developed trend analysis dashboards, and created business intelligence solutions.',
       highlights: [
         'Implemented SAP procurement data pipeline reducing manual work by 40%',
@@ -44,6 +46,7 @@ export default function Home() {
       title: 'Software Engineer',
       period: 'Jan – May 2025',
       location: 'Montreal, Canada',
+      website: 'https://www.groupalta.com',
       description: 'Led design and full deployment of production website (www.groupalta.com) including architecture, development, and deployment.',
       highlights: [
         'Designed and architected full-stack website from scratch',
@@ -143,15 +146,15 @@ export default function Home() {
         id="about"
         style={{
           width: '100%',
-          padding: '60px 120px',
+          padding: '80px 120px',
           borderTop: '2px solid rgba(0,0,0,0.08)',
           backgroundColor: '#ffffff',
           boxSizing: 'border-box',
         }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 40, alignItems: 'flex-start' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'flex-start' }}>
           <div>
-            <div style={{ width: '100%', height: '200px', borderRadius: 12, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
+            <div style={{ width: '100%', height: '340px', borderRadius: 12, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
               <img src="/about-photo.jpg" alt="About" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} onError={(e)=>{e.currentTarget.style.display='none'; if(e.currentTarget.parentElement) e.currentTarget.parentElement.textContent='📸 Add /about-photo.jpg to /public'; e.currentTarget.parentElement.style.fontSize='0.95rem'; e.currentTarget.parentElement.style.opacity='0.5'; e.currentTarget.parentElement.style.display='flex'; e.currentTarget.parentElement.style.alignItems='center'; e.currentTarget.parentElement.style.justifyContent='center'; e.currentTarget.parentElement.style.background='rgba(0,0,0,0.02)'}} />
             </div>
           </div>
@@ -248,16 +251,16 @@ export default function Home() {
       <section
         style={{
           width: '100%',
-          padding: '60px 120px',
+          padding: '80px 120px',
           borderTop: '2px solid rgba(0,0,0,0.08)',
           backgroundColor: '#ffffff',
           boxSizing: 'border-box',
         }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: 40, alignItems: 'flex-start' }}>
-          <div>
-            <div style={{ width: '280px', height: '360px', borderRadius: 12, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
-              <img src="/education-photo.jpg" alt="Education" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} onError={(e)=>{e.currentTarget.style.display='none'; if(e.currentTarget.parentElement) e.currentTarget.parentElement.innerHTML='<div style="width:100%;height:100%;display:flex;alignItems:center;justifyContent:center;background:rgba(0,0,0,0.02);border:1px dashed rgba(0,0,0,0.1);fontSize:0.9rem;color:rgba(0,0,0,0.4)">📸 Add /education-photo.jpg</div>'}} />
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'flex-start' }}>
+          <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+            <div style={{ width: '360px', height: '470px', borderRadius: 12, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.06)' }}>
+              <img src="/education-photo.jpg" alt="Education" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} onError={(e)=>{e.currentTarget.style.display='none'; if(e.currentTarget.parentElement) e.currentTarget.parentElement.innerHTML='<div style="width:100%;height:100%;display:flex;alignItems:center;justifyContent:center;background:rgba(0,0,0,0.02);border:1px dashed rgba(0,0,0,0.1);fontSize:0.9rem;color:rgba(0,0,0,0.4)">📸 Add /education-photo.jpg to /public</div>'}} />
             </div>
           </div>
           <div>
@@ -312,26 +315,29 @@ export default function Home() {
       <section
         style={{
           width: '100%',
-          padding: '40px 120px',
+          padding: '80px 120px',
           borderTop: '2px solid rgba(0,0,0,0.08)',
           backgroundColor: '#ffffff',
           boxSizing: 'border-box',
         }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32, alignItems: 'center' }}>
-          <div>
-            <div style={{ width: '280px', height: '360px', borderRadius: 12, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.06)', border: '1px dashed rgba(0,0,0,0.1)' }}>
-              <img src="/extra-photo.jpg" alt="Extracurricular" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} onError={(e)=>{e.currentTarget.style.display='none'; if(e.currentTarget.parentElement) e.currentTarget.parentElement.innerHTML='<div style="width:100%;height:100%;display:flex;alignItems:center;justifyContent:center;background:rgba(0,0,0,0.02);fontSize:0.9rem;color:rgba(0,0,0,0.4)">📸 Add /extra-photo.jpg</div>'}} />
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
+          <div style={{ marginLeft: 'auto', marginRight: 'auto' }}>
+            <div style={{ width: '360px', height: '470px', borderRadius: 12, overflow: 'hidden', boxShadow: '0 8px 24px rgba(0,0,0,0.06)', border: '1px dashed rgba(0,0,0,0.1)' }}>
+              <img src="/extra-photo.jpg" alt="Extracurricular" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} onError={(e)=>{e.currentTarget.style.display='none'; if(e.currentTarget.parentElement) e.currentTarget.parentElement.innerHTML='<div style="width:100%;height:100%;display:flex;alignItems:center;justifyContent:center;background:rgba(0,0,0,0.02);fontSize:0.9rem;color:rgba(0,0,0,0.4)">📸 Add /extra-photo.jpg to /public</div>'}} />
             </div>
           </div>
 
           <div>
             <h2 style={{ fontSize: '2.2rem', fontWeight: 800, marginBottom: 16 }}>Extracurriculars</h2>
-            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.95, marginBottom: 12 }}>
-              I've been swimming competitively for over 13 years and currently compete on the McGill Varsity Swim Team. My weekly training load exceeds 15–20 hours and has included strength & conditioning, race-pace sets, and technical stroke work. I hold provincial records, have medalled at national championships, and represented Canada at the Olympic Trials (2024 Bronze Medalist). Swimming has shaped my work ethic, time management, and leadership — I often mentor junior swimmers and help organize team training sessions.
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.85, marginBottom: 12 }}>
+              I've dedicated over 13 years to competitive swimming. Currently on the McGill Varsity Swim Team, I train 15–20 hours per week with focus on race-pace sets, technical refinement, and strength conditioning. I hold provincial records, have medalled at nationals, and represented Canada at the Olympic Trials (2024 Bronze Medalist).
             </p>
-            <p style={{ fontSize: '0.95rem', opacity: 0.9 }}>
-              Outside of the pool, I spend time analyzing and trading the stock market. I enjoy building systematic strategies, backtesting ideas, keeping a detailed trading journal, and studying market structure and risk management techniques.
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.8, opacity: 0.85, marginBottom: 12 }}>
+              I employ both technical and fundamental analysis to identify market inefficiencies. I focus on recognizing patterns in price action, studying discount and premium zones, and trading with momentum when volume supports movement. My approach balances disciplined risk management with opportunistic positioning based on market structure.
+            </p>
+            <p style={{ fontSize: '0.95rem', opacity: 0.8 }}>
+              Other interests: tennis, chess, and surfing.
             </p>
           </div>
         </div>
@@ -472,6 +478,36 @@ export default function Home() {
                     </span>
                   ))}
                 </div>
+
+                {experiences[selectedExperience].website && (
+                  <a
+                    href={experiences[selectedExperience].website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      marginTop: 24,
+                      padding: '10px 20px',
+                      backgroundColor: '#1a1a1a',
+                      color: '#ffffff',
+                      border: 'none',
+                      borderRadius: '8px',
+                      cursor: 'pointer',
+                      fontWeight: 600,
+                      fontSize: '0.95rem',
+                      textDecoration: 'none',
+                      display: 'inline-block',
+                      transition: 'all 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = 'rgba(0,0,0,0.8)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = '#1a1a1a';
+                    }}
+                  >
+                    View Website
+                  </a>
+                )}
 
                 <button
                   onClick={() => setSelectedExperience(null)}
