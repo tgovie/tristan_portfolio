@@ -6,7 +6,7 @@ export const site = {
   name: "Tristan Govier",
   initials: "TG",
   /** Used for absolute URLs (OpenGraph, sitemap). Update when your domain is final. */
-  url: "https://tristan-govier.ca",
+  url: "https://tristangovier.vercel.app",
   title: "Tristan Govier | Engineering, Software & Markets",
   description:
     "Tristan Govier — Computer Engineering student at McGill building across software, data and financial markets.",
