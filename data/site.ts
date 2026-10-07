@@ -1,0 +1,71 @@
+/**
+ * Personal information and site-wide copy. Edit this file to change what the homepage says.
+ */
+
+export const site = {
+  name: "Tristan Govier",
+  initials: "TG",
+  /** Used for absolute URLs (OpenGraph, sitemap). Update when your domain is final. */
+  url: "https://tristan-govier.ca",
+  title: "Tristan Govier | Engineering, Software & Markets",
+  description:
+    "Tristan Govier — Computer Engineering student at McGill building across software, data and financial markets.",
+  email: "trisgovier@gmail.com",
+  /** Résumé PDF in /public. The navbar and hero open it in a new tab. */
+  resume: "/resume.pdf",
+
+  hero: {
+    status: "Computer Engineering · McGill University",
+    headline: "Computer Engineering student building across software, data and markets.",
+    summary:
+      "I'm a Computer Engineering student at McGill interested in software, financial markets and building technology around real-world problems.",
+  },
+
+  about: [
+    "I study Computer Engineering at McGill. My interests sit somewhere between software, engineering, data and financial markets, and the projects I like most are the ones where I get to figure out how a system works — analysing data, automating something tedious, or building a tool I'd actually use.",
+    "Outside of engineering, I spent years swimming at a high level in Canada, most recently on McGill's varsity team. I'm also into DJing, skiing, golf and travel.",
+  ],
+
+  education: {
+    institution: "McGill University",
+    degree: "B.Eng. Computer Engineering",
+    date: "Expected 2028",
+    location: "Montreal, Canada",
+    coursework: [
+      "Algorithms & Data Structures",
+      "Probability & Statistics",
+      "Linear Algebra",
+      "Differential Equations",
+      "Signals & Systems",
+    ],
+    note: "McGill Athletic Scholarship recipient",
+  },
+
+  /** Compact skills lines shown in About. Project-specific tech lives on the project cards. */
+  skills: [
+    { label: "Technical", items: ["Python", "Pandas", "Java", "C", "Git", "Bash", "Power BI"] },
+    { label: "Markets", items: ["Futures", "Backtesting", "Market Analysis", "Risk Management"] },
+  ],
+
+  personal: {
+    heading: "Beyond engineering",
+    title: "Former McGill Varsity Swimmer & McGill Record Holder",
+    body: "I competed for McGill while studying engineering, training 20+ hours a week alongside classes.",
+    highlights: [
+      "Canadian Olympic Trials Bronze Medalist",
+      "4× U SPORTS individual finalist",
+      "U SPORTS team bronze medalist",
+      "Canada Games Gold & Bronze Medalist",
+      "Quebec Age Group Record Holder",
+    ],
+    interests: ["Golf", "Alpine Skiing", "DJing", "Travel", "Baking"],
+    /** Set to "" to hide the photo. */
+    photo: "/images/swim-start.jpg",
+    photoAlt: "Tristan diving off the starting block at a swim meet",
+  },
+
+  contact: {
+    heading: "Let's connect.",
+    body: "I'm always interested in meeting people working on interesting problems across software, engineering, data and markets.",
+  },
+} as const;
