@@ -1,15 +1,26 @@
 import Image from "next/image";
 import { site } from "@/data/site";
 import { Reveal } from "../ui/Reveal";
+import { cn } from "@/lib/utils";
 
 export function BeyondEngineering() {
   const p = site.personal;
   return (
     <section id="beyond" className="py-16 md:py-20">
       <div className="container-page grid items-center gap-10 md:grid-cols-2 md:gap-16">
-        {p.photo && (
-          <Reveal className="relative aspect-[4/3] overflow-hidden rounded-xl border border-line">
-            <Image src={p.photo} alt={p.photoAlt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+        {p.photos.length > 0 && (
+          <Reveal className={cn("grid h-[300px] gap-3 sm:h-[400px]", p.photos.length > 1 && "grid-cols-[1.5fr_1fr]")}>
+            {p.photos.map((photo, i) => (
+              <div key={photo.src} className="group relative overflow-hidden rounded-xl border border-line">
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes={i === 0 ? "(min-width: 768px) 30vw, 60vw" : "(min-width: 768px) 20vw, 40vw"}
+                  className={cn("object-cover transition-transform duration-700 group-hover:scale-[1.04]", i === 1 && "object-[50%_30%]")}
+                />
+              </div>
+            ))}
           </Reveal>
         )}
         <Reveal delay={0.06}>

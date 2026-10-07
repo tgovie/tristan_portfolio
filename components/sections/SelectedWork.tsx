@@ -19,13 +19,16 @@ export function SelectedWork() {
           )}
         </SectionHeading>
 
-        {/* First two projects get wider cards; the rest sit three across. */}
-        <div className="grid gap-5 md:grid-cols-6">
-          {featuredProjects.map((p, i) => (
-            <Reveal key={p.slug} delay={(i % 3) * 0.05} className={cn(i < 2 ? "md:col-span-3" : "md:col-span-3 lg:col-span-2")}>
-              <ProjectCard project={p} large={i < 2} />
-            </Reveal>
-          ))}
+        {/* With an odd number of projects, the first spans the full width. */}
+        <div className="grid gap-5 md:grid-cols-2">
+          {featuredProjects.map((p, i) => {
+            const wide = i === 0 && featuredProjects.length % 2 === 1;
+            return (
+              <Reveal key={p.slug} delay={i * 0.05} className={cn(wide && "md:col-span-2")}>
+                <ProjectCard project={p} large wide={wide} />
+              </Reveal>
+            );
+          })}
         </div>
 
         {otherProjects.length > 0 && (

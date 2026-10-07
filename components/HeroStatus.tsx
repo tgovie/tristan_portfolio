@@ -31,8 +31,6 @@ export function HeroStatus() {
 
   return (
     <p className="flex h-4 items-center gap-2 font-mono text-[11px] text-subtle">
-      <span className="text-muted">NQ · ES</span>
-      <span aria-hidden="true">—</span>
       {state ? (
         <>
           <span

@@ -73,10 +73,20 @@ export function Navbar() {
       )}
     >
       <nav aria-label="Main" className="container-page flex h-14 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 rounded-md text-sm font-medium text-fg">
-          <span className="grid size-7 place-items-center rounded-md border border-line font-mono text-[11px]" aria-hidden="true">
-            {site.initials}
-          </span>
+        <Link
+          href="/"
+          onClick={(e) => {
+            setOpen(false);
+            // Already on the homepage: scroll back to the top instead of re-navigating.
+            if (isHome) {
+              e.preventDefault();
+              window.history.replaceState(null, "", "/");
+              window.scrollTo({ top: 0, behavior: "smooth" });
+              e.currentTarget.blur();
+            }
+          }}
+          className="flex min-h-11 items-center rounded-md text-[15px] font-medium tracking-tight text-fg"
+        >
           {site.name}
         </Link>
 

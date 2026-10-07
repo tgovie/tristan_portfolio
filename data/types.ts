@@ -1,7 +1,7 @@
 /** Shared content types. Every section renders from data in /data. */
 
 /** Built-in mockup rendered when a project has no screenshot. */
-export type PreviewKind = "coverday" | "market-sessions" | "volume" | "property" | "portfolio";
+export type PreviewKind = "coverday" | "market-sessions" | "volume";
 
 export interface Project {
   slug: string;
@@ -22,6 +22,14 @@ export interface Project {
   /** Optional screenshot under /public (16:10 works best). Falls back to `preview`. */
   image?: string;
   preview?: PreviewKind;
+
+  /* ---- Project page (/projects/[slug]). The page exists when `overview` is set. ---- */
+  /** Short paragraph at the top of the project page. */
+  overview?: string;
+  /** Three or four short bullets: what it does. */
+  highlights?: string[];
+  /** Interactive demo shown on the project page. */
+  demo?: PreviewKind;
 }
 
 export interface ExperienceEntry {

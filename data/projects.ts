@@ -3,11 +3,13 @@ import type { Project } from "./types";
 /**
  * Projects. To add one, append an object — no layout code needs to change.
  *
- * - `featured: true`  → shown on the homepage with a visual (keep this to ~5).
+ * - `featured: true`  → shown on the homepage with a visual.
  * - `featured: false` → only listed on /projects.
- * - `link`            → where clicking the card goes. Leave "" until the URL exists; the card
- *                       simply isn't clickable until then.
+ * - `overview`        → gives the project its own page at /projects/<slug> (cards link there).
+ * - `link`            → live site / app / repo. Shown as a button on the project page.
  * - `github`          → optional repo button.
+ *
+ * Demos on project pages use sample data and are labelled as such.
  */
 export const projects: Project[] = [
   {
@@ -21,6 +23,15 @@ export const projects: Project[] = [
     preview: "coverday",
     link: "", // TODO: add Coverday URL
     github: "",
+    overview:
+      "Coverday focuses on the money that's already committed: rent, bills, subscriptions and other recurring payments. Instead of budgeting categories, it lays upcoming payments out on one simple timeline so you can see what's leaving your account and when.",
+    highlights: [
+      "Timeline of upcoming bills and subscriptions",
+      "Recurring-payment and subscription tracking",
+      "Simple overview of what's due in the next few weeks",
+      "Reminders before payments land",
+    ],
+    demo: "coverday",
   },
   {
     slug: "market-session-explorer",
@@ -33,6 +44,15 @@ export const projects: Project[] = [
     preview: "market-sessions",
     link: "", // TODO
     github: "", // TODO
+    overview:
+      "Market Session Explorer splits each trading day into the Asia, London and New York sessions so you can compare how NQ and ES behave in each: price, volume and volatility, and how they react around scheduled economic releases.",
+    highlights: [
+      "NQ and ES intraday data, split by session in Eastern Time",
+      "Session statistics: range, volume and volatility",
+      "Price behaviour around economic events",
+      "Historical comparison across days and weeks",
+    ],
+    demo: "market-sessions",
   },
   {
     slug: "volume-explorer",
@@ -44,29 +64,15 @@ export const projects: Project[] = [
     preview: "volume",
     link: "", // TODO
     github: "",
-  },
-  {
-    slug: "property-intelligence-tool",
-    title: "Property Intelligence Tool",
-    description: "A Python-based data pipeline for collecting and organizing public Montreal property information.",
-    category: "Data / Automation",
-    technologies: ["Python", "Playwright", "Pandas"],
-    featured: true,
-    preview: "property",
-    link: "",
-    github: "",
-  },
-  {
-    slug: "personal-portfolio",
-    title: "Personal Portfolio",
-    description: "The site you're currently looking at.",
-    category: "Web",
-    technologies: ["Next.js", "TypeScript", "Tailwind"],
-    featured: true,
-    badge: "You're here ↗",
-    preview: "portfolio",
-    link: "/",
-    github: "https://github.com/tgovie/tristan_portfolio",
+    overview:
+      "Volume Explorer takes historical 5-minute futures data and averages volume by time of day, making it easy to see when NQ and ES actually trade and how participation shifts between sessions.",
+    highlights: [
+      "Built on 5-minute historical market data",
+      "Average volume by time of day",
+      "NQ vs ES and session-by-session comparisons",
+      "Interactive Streamlit interface",
+    ],
+    demo: "volume",
   },
 
   /* ---------------- Listed on /projects only ---------------- */
@@ -107,3 +113,19 @@ export const projects: Project[] = [
 
 export const featuredProjects = projects.filter((p) => p.featured);
 export const otherProjects = projects.filter((p) => !p.featured);
+export const pageProjects = projects.filter((p) => Boolean(p.overview));
+
+export function getProject(slug: string) {
+  return pageProjects.find((p) => p.slug === slug);
+}
+
+export function getNextProject(slug: string) {
+  const i = pageProjects.findIndex((p) => p.slug === slug);
+  return pageProjects[(i + 1) % pageProjects.length];
+}
+
+/** Where a project card goes: its own page if it has one, else the live link, else the repo. */
+export function projectHref(p: Project) {
+  if (p.overview) return `/projects/${p.slug}`;
+  return p.link || p.github || "";
+}

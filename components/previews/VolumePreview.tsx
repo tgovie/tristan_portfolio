@@ -5,7 +5,7 @@ const N = 78; // 5-minute bars in the 09:30–16:00 cash session
 const W = 600;
 const H = 240;
 
-export function VolumePreview() {
+export function VolumePreview({ className }: { className?: string }) {
   const nq = volumeProfile(3, N);
   const es = volumeProfile(9, N).map((v) => v * 0.82);
   const max = Math.max(...nq, ...es);
@@ -15,7 +15,7 @@ export function VolumePreview() {
     .join(" ");
 
   return (
-    <PreviewCanvas>
+    <PreviewCanvas className={className}>
       <div className="flex h-full items-center justify-center p-[4cqw]">
         <WindowFrame title="volume-explorer · streamlit" className="h-full w-full">
           <div className="grid h-full grid-cols-[22%_1fr]">

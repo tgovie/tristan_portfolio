@@ -1,15 +1,12 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import type { Project } from "@/data/types";
+import { projectHref } from "@/data/projects";
 import { ProjectPreview } from "../previews/ProjectPreview";
 import { GitHubIcon } from "../ui/BrandIcons";
 import { Tag } from "../ui/Tag";
 import { cn } from "@/lib/utils";
 
-/** Where clicking the card goes: the project link, else the repo, else nowhere yet. */
-function cardHref(p: Project) {
-  return p.link || p.github || "";
-}
 
 function CardLink({ href, title }: { href: string; title: string }) {
   const cls = "after:absolute after:inset-0 after:z-[5] after:rounded-xl focus-visible:outline-none focus-visible:after:outline focus-visible:after:outline-2 focus-visible:after:outline-accent";
@@ -28,8 +25,9 @@ function CardLink({ href, title }: { href: string; title: string }) {
 }
 
 /** Homepage project card: visual, title, one sentence, tags. The whole card is the link. */
-export function ProjectCard({ project, large = false }: { project: Project; large?: boolean }) {
-  const href = cardHref(project);
+/** `wide` puts the visual beside the text on desktop (used for a full-width card). */
+export function ProjectCard({ project, large = false, wide = false }: { project: Project; large?: boolean; wide?: boolean }) {
+  const href = projectHref(project);
   const clickable = Boolean(href);
 
   return (
@@ -37,9 +35,10 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
       className={cn(
         "group relative flex h-full flex-col overflow-hidden rounded-xl border border-line bg-card transition-[border-color,transform] duration-300",
         clickable && "hover:-translate-y-1 hover:border-line-strong",
+        wide && "md:grid md:grid-cols-[1.35fr_1fr]",
       )}
     >
-      <div className="relative overflow-hidden border-b border-line">
+      <div className={cn("relative overflow-hidden border-b border-line", wide && "md:border-b-0 md:border-r")}>
         <div className={cn("transition-transform duration-500 ease-out", clickable && "group-hover:scale-[1.03]")}>
           <ProjectPreview project={project} />
         </div>
@@ -50,10 +49,18 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
         )}
       </div>
 
-      <div className={cn("flex flex-1 flex-col", large ? "p-6" : "p-5")}>
-        <p className="font-mono text-[11px] text-subtle">{project.category}</p>
+      <div className={cn("flex flex-1 flex-col", large ? "p-6" : "p-5", wide && "md:justify-center md:p-10")}>
+        <div className="flex items-center justify-between gap-3">
+          <p className="font-mono text-[11px] text-subtle">{project.category}</p>
+          {project.demo && (
+            <span className="flex items-center gap-1.5 font-mono text-[10px] text-accent-soft">
+              <span className="size-1.5 animate-pulse-dot rounded-full bg-accent" aria-hidden="true" />
+              interactive demo
+            </span>
+          )}
+        </div>
         <div className="mt-1.5 flex items-start justify-between gap-3">
-          <h3 className={cn("font-medium tracking-tight text-fg", large ? "text-xl" : "text-lg")}>
+          <h3 className={cn("font-medium tracking-tight text-fg", wide ? "text-2xl md:text-3xl" : large ? "text-xl" : "text-lg")}>
             {clickable ? <CardLink href={href} title={project.title} /> : project.title}
           </h3>
           {clickable && (
@@ -67,7 +74,7 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
         <p className="mt-2 text-[15px] leading-relaxed text-muted">{project.description}</p>
 
         {(project.technologies.length > 0 || (project.github && project.github !== href)) && (
-          <div className="mt-auto flex items-end justify-between gap-3 pt-5">
+          <div className={cn("flex items-end justify-between gap-3 pt-5", !wide && "mt-auto")}>
             <ul className="flex flex-wrap gap-1.5" aria-label="Technologies">
               {project.technologies.map((t) => (
                 <li key={t}>
@@ -95,7 +102,7 @@ export function ProjectCard({ project, large = false }: { project: Project; larg
 
 /** Compact row used on /projects for smaller projects. */
 export function ProjectRow({ project }: { project: Project }) {
-  const href = cardHref(project);
+  const href = projectHref(project);
   return (
     <li className="group relative grid gap-2 border-t border-line py-5 md:grid-cols-[1fr_auto] md:items-baseline md:gap-8">
       <div>

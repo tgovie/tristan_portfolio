@@ -25,9 +25,9 @@ function Phone({ children, className }: { children: React.ReactNode; className?:
   );
 }
 
-export function CoverdayPreview() {
+export function CoverdayPreview({ className }: { className?: string }) {
   return (
-    <PreviewCanvas>
+    <PreviewCanvas className={className}>
       <div className="pointer-events-none absolute left-1/2 top-1/2 size-[50cqw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/10 blur-[6cqw]" />
       <div className="relative flex h-full items-center justify-center gap-[3cqw] pt-[5cqw]">
         {/* secondary phone — subscriptions */}

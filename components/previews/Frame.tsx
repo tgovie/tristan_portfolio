@@ -6,8 +6,10 @@ import { cn } from "@/lib/utils";
  * so the mockup scales like an image at any card width.
  */
 export function PreviewCanvas({ children, className }: { children: ReactNode; className?: string }) {
+  // Default to 16:10 unless the caller sizes the canvas itself (e.g. "h-full").
+  const sized = className?.includes("h-full");
   return (
-    <div className={cn("@container relative aspect-[16/10] w-full overflow-hidden bg-bg", className)}>
+    <div className={cn("@container relative w-full overflow-hidden bg-bg", !sized && "aspect-[16/10]", className)}>
       <div className="bg-grid absolute inset-0 opacity-60" aria-hidden="true" />
       <div className="absolute inset-0">{children}</div>
     </div>

@@ -31,7 +31,7 @@ const sessionStats = [
   { label: "New York", range: 1, vol: 1 },
 ];
 
-export function MarketSessionsPreview() {
+export function MarketSessionsPreview({ className }: { className?: string }) {
   const cs = candles();
   const vols = Array.from({ length: N }, (_, i) => {
     const t = i / N;
@@ -47,7 +47,7 @@ export function MarketSessionsPreview() {
   );
 
   return (
-    <PreviewCanvas>
+    <PreviewCanvas className={className}>
       <div className="flex h-full items-center justify-center p-[4cqw]">
         <WindowFrame
           title="market-session-explorer"

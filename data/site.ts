@@ -14,6 +14,9 @@ export const site = {
   /** Résumé PDF in /public. The navbar and hero open it in a new tab. */
   resume: "/resume.pdf",
 
+  /** Headshot shown in the hero. Set to "" to hide. */
+  headshot: "/images/profile.jpg",
+
   hero: {
     status: "Computer Engineering · McGill University",
     headline: "Computer Engineering student building across software, data and markets.",
@@ -59,9 +62,11 @@ export const site = {
       "Quebec Age Group Record Holder",
     ],
     interests: ["Golf", "Alpine Skiing", "DJing", "Travel", "Baking"],
-    /** Set to "" to hide the photo. */
-    photo: "/images/swim-start.jpg",
-    photoAlt: "Tristan diving off the starting block at a swim meet",
+    /** Photos shown beside the text. The first is the larger one. Remove entries to hide them. */
+    photos: [
+      { src: "/images/swim-start.jpg", alt: "Tristan diving off the starting block at a swim meet" },
+      { src: "/images/swim-podium.jpg", alt: "Tristan on the podium at a Quebec swim meet" },
+    ],
   },
 
   contact: {
