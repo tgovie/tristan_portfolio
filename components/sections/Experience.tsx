@@ -39,7 +39,7 @@ export function Experience() {
         <SectionHeading label="experience" title="Experience" aside />
         <ol className="border-b border-line">
           {experience.map((job) => (
-            <Row key={job.company} job={job} />
+            <Row key={`${job.company}-${job.date}`} job={job} />
           ))}
           <Row job={marketsResearch} dashed />
         </ol>

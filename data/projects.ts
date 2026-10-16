@@ -74,6 +74,15 @@ export const projects: Project[] = [
     ],
     demo: "volume",
   },
+  {
+    slug: "alta-construction-group",
+    title: "Alta Construction Group",
+    description:
+      "Built Python web-scraping tools, server-side automation workflows and Power BI dashboards for a McGill Engine award-winning construction-tech startup in Montreal.",
+    category: "Data / Automation",
+    technologies: ["Python", "Web Scraping", "Automation", "Power BI"],
+    featured: true,
+  },
 
   /* ---------------- Listed on /projects only ---------------- */
   {

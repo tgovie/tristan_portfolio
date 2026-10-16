@@ -37,31 +37,34 @@ export const site = {
     coursework: [
       "Algorithms & Data Structures",
       "Probability & Statistics",
-      "Linear Algebra",
-      "Differential Equations",
+      "Software Engineering",
+      "Computer Architecture",
+      "Digital Logic",
       "Signals & Systems",
+      "Comm Systems & Networks",
     ],
-    note: "McGill Athletic Scholarship recipient",
+    note: "McGill Athletic Scholarship & Vancouver District Scholarship recipient",
   },
 
   /** Compact skills lines shown in About. Project-specific tech lives on the project cards. */
   skills: [
-    { label: "Technical", items: ["Python", "Pandas", "Java", "C", "Git", "Bash", "Power BI"] },
-    { label: "Markets", items: ["Futures", "Backtesting", "Market Analysis", "Risk Management"] },
+    { label: "Technical", items: ["Python", "Java", "C", "JavaScript", "React.js", "Bash", "Git", "Docker", "REST APIs", "VHDL", "Umple", "HTML/CSS"] },
+    { label: "Data", items: ["Power BI", "Power Automate", "Microsoft 365"] },
+    { label: "Markets", items: ["Futures Trading", "Backtesting", "Trade Execution", "Market Analysis", "Risk Management"] },
   ],
 
   personal: {
     heading: "Beyond engineering",
     title: "Former McGill Varsity Swimmer & McGill Record Holder",
-    body: "I competed for McGill while studying engineering, training 20+ hours a week alongside classes.",
+    body: "I competed for McGill while studying engineering, training 20+ hours a week alongside classes until 2026.",
     highlights: [
-      "Canadian Olympic Trials Bronze Medalist",
+      "2024 Canadian Olympic Trials Bronze Medalist",
       "4× U SPORTS individual finalist",
       "U SPORTS team bronze medalist",
       "Canada Games Gold & Bronze Medalist",
       "Quebec Age Group Record Holder",
     ],
-    interests: ["Golf", "Alpine Skiing", "DJing", "Travel", "Baking"],
+    interests: ["Golf", "Alpine Skiing", "Travel", "Fishing", "DJing", "Baking"],
     /** Photos shown beside the text. The first is the larger one. Remove entries to hide them. */
     photos: [
       { src: "/images/swim-start.jpg", alt: "Tristan diving off the starting block at a swim meet" },

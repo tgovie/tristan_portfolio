@@ -4,35 +4,27 @@ import type { ExperienceEntry } from "./types";
 export const experience: ExperienceEntry[] = [
   {
     company: "ATS Traffic Pte Ltd",
-    role: "Engineering Intern — Project Operations",
+    role: "Engineering Intern",
     location: "Singapore",
     date: "May 2026 – Aug 2026",
     summary:
-      "Worked across live infrastructure projects on system testing, troubleshooting and technical documentation, supporting day-to-day project operations.",
+      "Supported engineers on traffic control system projects: system testing, equipment installation, maintenance and troubleshooting, onsite compliance checks and technical documentation.",
   },
   {
     company: "Compass Group",
-    role: "Finance Data Analyst Intern",
+    role: "Data Analyst Intern",
     location: "Singapore",
     date: "May 2025 – Aug 2025",
     summary:
-      "Built Power BI dashboards on financial and operational data and streamlined recurring reporting for the finance team.",
-  },
-  {
-    company: "Alta Construction Group",
-    role: "Financial Analysis & Client Development",
-    location: "Montreal, Canada",
-    date: "Jan 2025 – Apr 2025",
-    summary:
-      "Built financial models for property projects to support pricing and forecasting, alongside commercial analysis and client development.",
+      "Built Power BI dashboards on financial, procurement and vendor KPIs, supported IT project managers on system testing and setup, and provided level 2 technical support at client sites.",
   },
   {
     company: "Compass Group",
-    role: "Data Analyst Intern — Finance & Procurement",
-    location: "Singapore / Remote",
+    role: "Data Analyst Intern",
+    location: "Remote",
     date: "Nov 2024 – May 2025",
     summary:
-      "Analysed financial, procurement and supplier data, bringing SAP purchasing data into Power BI reporting.",
+      "Integrated SAP procurement data and SharePoint trend data into Power BI, building reporting workflows for the finance department.",
   },
 ];
 
