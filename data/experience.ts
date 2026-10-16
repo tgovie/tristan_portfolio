@@ -27,7 +27,7 @@ export const experience: ExperienceEntry[] = [
       "Built financial models for property projects to support pricing and forecasting, alongside commercial analysis and client development.",
   },
   {
-    company: "Cremerworkz Pte Ltd",
+    company: "Compass Group",
     role: "Data Analyst Intern — Finance & Procurement",
     location: "Singapore / Remote",
     date: "Nov 2024 – May 2025",
