@@ -16,7 +16,7 @@ export const projects: Project[] = [
     slug: "coverday",
     title: "Coverday",
     description:
-      "A simple personal-finance app designed to make upcoming bills, subscriptions and recurring payments easier to understand.",
+      "An all-in-one personal-finance dashboard I coded independently: real-time finances, expense categories, bill alerts, and investments and loans in one place.",
     category: "FinTech / Mobile",
     technologies: [], // TODO: add the stack once it's final
     featured: true,
@@ -24,12 +24,12 @@ export const projects: Project[] = [
     link: "", // TODO: add Coverday URL
     github: "",
     overview:
-      "Coverday focuses on the money that's already committed: rent, bills, subscriptions and other recurring payments. Instead of budgeting categories, it lays upcoming payments out on one simple timeline so you can see what's leaving your account and when.",
+      "Coverday is an all-in-one financial dashboard that brings every part of your finances into one place. It tracks your money in real time, categorises expenses, alerts you before bills are due and monitors investments and loans, so you have a single source of truth for your personal finances.",
     highlights: [
-      "Timeline of upcoming bills and subscriptions",
-      "Recurring-payment and subscription tracking",
-      "Simple overview of what's due in the next few weeks",
-      "Reminders before payments land",
+      "Real-time view of your finances",
+      "Automatic expense categorisation",
+      "Alerts before upcoming bills land",
+      "Investment portfolio and loan tracking",
     ],
     demo: "coverday",
   },
@@ -78,9 +78,9 @@ export const projects: Project[] = [
     slug: "alta-construction-group",
     title: "Alta Construction Group",
     description:
-      "Built Python web-scraping tools, server-side automation workflows and Power BI dashboards for a McGill Engine award-winning construction-tech startup in Montreal.",
+      "Built server-side automation workflows and Python web-scraping tools to collect and structure business and property data for a McGill Engine award-winning construction-tech startup in Montreal.",
     category: "Data / Automation",
-    technologies: ["Python", "Web Scraping", "Automation", "Power BI"],
+    technologies: ["Python", "Web Scraping", "Automation"],
     featured: true,
   },
 
